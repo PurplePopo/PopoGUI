@@ -4,16 +4,14 @@
  * @Github: https://github.com/PurplePopo/PopoGUI
  * @Date: 2019-09-14 08:35:40
  * @LastEditors: PurplePopo
- * @LastEditTime: 2019-09-14 08:49:55
+ * @LastEditTime: 2019-09-15 09:45:16
  */
 #ifndef _POPOGUI_INTERFACE_H__
 #define _POPOGUI_INTERFACE_H__
 
-typedef unsigned char PopoGUI_Data;
-typedef unsigned char PopoGUI_Command;
 
-static void PopoGUI_Write_Byte(PopoGUI_Data uiData);
-void PopoGUI_Write_Data(PopoGUI_Data uiData);
-void PopoGUI_Write_Command(PopoGUI_Command uiCommand);
+void PopoGUI_Write_Byte_Data(PopoGUI_Data_Byte popoByte);
+void PopoGUI_Write_Word_Data(PopoGUI_Data_Word popoWord);
+void PopoGUI_Write_Command(PopoGUI_Command popoCommand);
 
 #endif

@@ -4,13 +4,15 @@
  * @Github: https://github.com/PurplePopo/PopoGUI
  * @Date: 2019-09-14 09:01:57
  * @LastEditors: PurplePopo
- * @LastEditTime: 2019-09-14 11:34:36
+ * @LastEditTime: 2019-09-15 11:24:58
  */
 
 #ifndef __POPOGUI_DEFINES_H__
 #define __POPOGUI_DEFINES_H__
 
-#include "PopoGUI_DeviceConfigure.h"
+#include "PopoGUI_Configure.h"
+
+#define NULL 0U
 
 typedef enum
 {
@@ -20,23 +22,33 @@ typedef enum
     PopoGUI_TIMEOUT =   0x03U
 }PopoGUI_StatusTypeDef;
 
-typedef enum
+typedef enum 
 {
-    POPOGUI_PIXEL_RESET = 0U,
-    POPOGUI_PIXEL_SET   
-}PopoGUI_PixelState;
+    PopoGUI_RGB565 = 0U,
+    PopoGUI_BITMAP = 1U
+}PopoGUI_ColorModel;
 
-typedef unsigned int PopoGUI_Color; 
+typedef unsigned char   PopoGUI_Data_Byte;
+typedef unsigned int    PopoGUI_Data_Word;
+typedef unsigned char   PopoGUI_Command;
+typedef unsigned int    PopoGUI_Position;
+typedef unsigned int    PopoGUI_Color; 
+
+typedef unsigned char PopoGUI_AddressBuffer;
 typedef struct 
 {
-    /* data */
+    PopoGUI_Position posX;
+    PopoGUI_Position posY;
+    PopoGUI_Color color;
 }PopoGUI_Pixel;
 
-// typedef struct __PopoGUI_SCREEN
-// {
-//     /* data */
-
-// }PopoGUI_Screen;
+typedef struct 
+{
+    PopoGUI_Data_Word xOffset;
+    PopoGUI_Data_Word yOffset;
+    PopoGUI_Data_Word xPos;
+    PopoGUI_Data_Word yPos;
+}PopoGUI_Address;
 
 
 #endif
