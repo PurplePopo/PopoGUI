@@ -12,24 +12,25 @@
 /**
  * user defined here
  * */
+ #include "main.h"
 
-#error "implement interface first! and annotate this."
+extern SPI_HandleTypeDef hspi1;
 
-void PopoGUI_Write_Byte_Data(PopoGUI_Data_Byte popoByte)
+//#error "implement interface first! and annotate this."
+
+
+void PopoGUI_Write_Data(PopoGUI_Data *popoData, PopoGUI_Size size)
 {
     //to implement here
-
+	
+	HAL_GPIO_WritePin(IPS_DC_GPIO_Port,IPS_DC_Pin,GPIO_PIN_SET);
+	HAL_SPI_Transmit(&hspi1,popoData,size,0xff);
 }
 
-void PopoGUI_Write_Word_Data(PopoGUI_Data_Word popoWord)
+void PopoGUI_Write_Command(PopoGUI_Command *popoCommand, PopoGUI_Size size)
 {
     //to implement here
-
-}
-
-void PopoGUI_Write_Command(PopoGUI_Command popoCommand)
-{
-    //to implement here
-    
+  HAL_GPIO_WritePin(IPS_DC_GPIO_Port,IPS_DC_Pin,GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi1,popoCommand,size,0xff);
 }
 

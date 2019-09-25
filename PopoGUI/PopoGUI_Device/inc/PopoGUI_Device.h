@@ -4,7 +4,7 @@
  * @Github: https://github.com/PurplePopo/PopoGUI
  * @Date: 2019-09-11 09:58:18
  * @LastEditors:: PurplePopo
- * @LastEditTime: 2019-09-15 11:15:31
+ * @LastEditTime: 2019-09-25 09:41:23
  */
 
 
@@ -35,12 +35,8 @@ typedef struct __PopoGUI_Device_Base
 
 PopoGUI_StatusTypeDef PopoGUI_Device_Init(PopoGUI_Device_Base *device);
 PopoGUI_StatusTypeDef PopoGUI_Device_Deinit(PopoGUI_Device_Base *device);
-PopoGUI_StatusTypeDef PopoGUI_Device_Clean(PopoGUI_Device_Base device, PopoGUI_Address address);
-PopoGUI_StatusTypeDef PopoGUI_Device_Fill(PopoGUI_Device_Base device, PopoGUI_Address address, PopoGUI_Color color);
-PopoGUI_StatusTypeDef PopoGUI_Device_DrawDirect(PopoGUI_Device_Base *device, PopoGUI_Address address, PopoGUI_Color color);
-PopoGUI_StatusTypeDef PopoGUI_Device_SetAddressBuffer(PopoGUI_Device_Base *device, PopoGUI_AddressBuffer pixelBuffer);
-PopoGUI_StatusTypeDef PopoGUI_Device_GetAddressBuffer(PopoGUI_Device_Base *device, PopoGUI_AddressBuffer *pixelBuffer);
-PopoGUI_StatusTypeDef PopoGUI_Device_FreshScreen(PopoGUI_Device_Base *device);
-PopoGUI_StatusTypeDef PopoGUI_Device_FreshBuffer(PopoGUI_Device_Base *device);
+PopoGUI_StatusTypeDef PopoGUI_Device_Clean(PopoGUI_Device_Base *device, PopoGUI_Address address);
+PopoGUI_StatusTypeDef PopoGUI_Device_Fill(PopoGUI_Device_Base *device, PopoGUI_Address address, PopoGUI_Color color);
+PopoGUI_StatusTypeDef PopoGUI_Device_Draw(PopoGUI_Device_Base *device, PopoGUI_Address address, PopoGUI_Color *colorData);
 
 #endif

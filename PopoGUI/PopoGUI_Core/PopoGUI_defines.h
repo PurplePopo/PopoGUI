@@ -4,15 +4,16 @@
  * @Github: https://github.com/PurplePopo/PopoGUI
  * @Date: 2019-09-14 09:01:57
  * @LastEditors: PurplePopo
- * @LastEditTime: 2019-09-15 11:24:58
+ * @LastEditTime: 2019-09-25 09:21:04
  */
 
 #ifndef __POPOGUI_DEFINES_H__
 #define __POPOGUI_DEFINES_H__
 
 #include "PopoGUI_Configure.h"
-
-#define NULL 0U
+#ifndef NULL
+	#define NULL 0U
+#endif
 
 typedef enum
 {
@@ -28,11 +29,11 @@ typedef enum
     PopoGUI_BITMAP = 1U
 }PopoGUI_ColorModel;
 
-typedef unsigned char   PopoGUI_Data_Byte;
-typedef unsigned int    PopoGUI_Data_Word;
-typedef unsigned char   PopoGUI_Command;
-typedef unsigned int    PopoGUI_Position;
-typedef unsigned int    PopoGUI_Color; 
+typedef unsigned char   		PopoGUI_Data;
+typedef unsigned char   		PopoGUI_Command;
+typedef unsigned short int 		PopoGUI_Size;
+typedef unsigned short int  	PopoGUI_Position;
+typedef unsigned short int		PopoGUI_Color; 
 
 typedef unsigned char PopoGUI_AddressBuffer;
 typedef struct 
@@ -44,10 +45,10 @@ typedef struct
 
 typedef struct 
 {
-    PopoGUI_Data_Word xOffset;
-    PopoGUI_Data_Word yOffset;
-    PopoGUI_Data_Word xPos;
-    PopoGUI_Data_Word yPos;
+    PopoGUI_Position xOffset;
+    PopoGUI_Position yOffset;
+    PopoGUI_Position xPos;
+    PopoGUI_Position yPos;
 }PopoGUI_Address;
 
 
